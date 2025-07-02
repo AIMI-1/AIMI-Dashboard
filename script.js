@@ -1,7 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
   const map = L.map('map').setView([-2.5, 118], 5);
 
-  // Tile asli bawaan Leaflet
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; OpenStreetMap contributors',
     maxZoom: 18
