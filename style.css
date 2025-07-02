@@ -1,0 +1,60 @@
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+}
+header {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background: #f3f3f3;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+header img {
+  height: 40px;
+  margin-right: 15px;
+}
+.container {
+  display: flex;
+  height: calc(100vh - 60px);
+}
+aside {
+  width: 200px;
+  background: #f9f9f9;
+  border-right: 1px solid #ccc;
+  padding: 15px;
+  overflow-y: auto;
+}
+aside h2 {
+  margin-top: 0;
+}
+aside ul {
+  list-style: none;
+  padding: 0;
+}
+aside li {
+  cursor: pointer;
+  padding: 5px;
+  border-bottom: 1px solid #ddd;
+}
+aside li:hover {
+  background: #e0e0e0;
+}
+main {
+  flex: 1;
+  padding: 10px;
+  overflow-y: auto;
+}
+#map {
+  height: 400px;
+  margin-bottom: 20px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: left;
+}
