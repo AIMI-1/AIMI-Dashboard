@@ -1,9 +1,9 @@
 
 document.addEventListener("DOMContentLoaded", function () {
   const map = L.map('map').setView([-2.5, 118], 5);
-  L.tileLayer('https://stamen-tiles.a.ssl.fastly.net/terrain/{z}/{x}/{y}.jpg', {
-  attribution: 'Map tiles by Stamen Design, CC BY 3.0 — Map data © OpenStreetMap contributors',
-  maxZoom: 18
+  L.tileLayer('https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {
+  attribution: '&copy; OpenStreetMap contributors, HOT',
+  maxZoom: 19
 }).addTo(map);
 
   const marketingList = document.getElementById("marketing-list");
