@@ -1,9 +1,10 @@
 
 document.addEventListener("DOMContentLoaded", function () {
   const map = L.map('map').setView([-2.5, 118], 5);
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    maxZoom: 18
-  }).addTo(map);
+  L.tileLayer('https://stamen-tiles.a.ssl.fastly.net/terrain/{z}/{x}/{y}.jpg', {
+  attribution: 'Map tiles by Stamen Design, CC BY 3.0 — Map data © OpenStreetMap contributors',
+  maxZoom: 18
+}).addTo(map);
 
   const marketingList = document.getElementById("marketing-list");
   const tableBody = document.querySelector("tbody");
