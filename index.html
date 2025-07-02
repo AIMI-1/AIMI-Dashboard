@@ -4,15 +4,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Dashboard AIMI</title>
-  <link rel="stylesheet" href="assets/style.css" />
+  <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
   <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-  <script src="assets/data.js" defer></script>
-  <script src="assets/script.js" defer></script>
+  <script src="data.js" defer></script>
+  <script src="script.js" defer></script>
 </head>
 <body>
   <header>
-    <img src="assets/logo.png" alt="AIMI Logo" />
+    <img src="logo.png" alt="AIMI Logo" />
     <h1>Dashboard Pelanggan AIMI</h1>
   </header>
 
@@ -29,6 +29,7 @@
         <li data-marketing="Ferdy">Ferdy</li>
       </ul>
     </aside>
+
     <main>
       <div id="map"></div>
       <h2>Data Global Pelanggan</h2>
@@ -36,7 +37,7 @@
         <thead>
           <tr><th>Nama</th><th>Marketing</th></tr>
         </thead>
-        <tbody></tbody>
+        <tbody id="table-body"></tbody>
       </table>
     </main>
   </div>
