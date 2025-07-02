@@ -8,6 +8,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const marketingList = document.getElementById("marketing-list");
   const tableBody = document.querySelector("tbody");
+  const redIcon = new L.Icon({
+  iconUrl: 'https://chart.googleapis.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|FF0000',
+  iconSize: [21, 34],
+  iconAnchor: [10, 34],
+  popupAnchor: [0, -30]
+});
 
   function renderMarkers(marketing) {
     map.eachLayer(layer => {
@@ -18,8 +24,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const filtered = marketing === "all" ? pelanggan : pelanggan.filter(p => p.marketing === marketing);
     filtered.forEach(p => {
-      L.marker([p.lat, p.lon]).addTo(map).bindPopup(`<b>${p.nama}</b><br>${p.marketing}`);
-    });
+      L.marker([p.lat, p.lon], { icon: redIcon })
+  .addTo(map)
+  .bindPopup(`${p.nama} (${p.marketing})`);
 
     renderTable(filtered);
   }
