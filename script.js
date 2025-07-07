@@ -46,4 +46,39 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   renderMarkers("all");
+  initProvinsiMenu(); // Jalankan menu provinsi saat peta siap
 });
+
+// ===========================
+// Menu Provinsi & Daftar Kota
+// ===========================
+
+const kotaDenganPelanggan = [
+  "Jakarta Selatan", "Surabaya", "Bandung", "Bekasi"
+  // Tambahkan kota yang SUDAH ada pelanggan
+];
+
+function initProvinsiMenu() {
+  const provinsiSelect = document.getElementById("provinsi-select");
+  if (!provinsiSelect) return;
+
+  for (const provinsi in wilayahIndonesia) {
+    const option = document.createElement("option");
+    option.value = provinsi;
+    option.textContent = provinsi;
+    provinsiSelect.appendChild(option);
+  }
+
+  provinsiSelect.addEventListener("change", () => {
+    const kotaList = wilayahIndonesia[provinsiSelect.value];
+    const ul = document.getElementById("daftar-kota");
+    ul.innerHTML = "";
+
+    kotaList.forEach(kota => {
+      const li = document.createElement("li");
+      const sudahAda = kotaDenganPelanggan.includes(kota);
+      li.textContent = `${kota} ${sudahAda ? '✅' : '❌ belum ada pelanggan'}`;
+      ul.appendChild(li);
+    });
+  });
+}
